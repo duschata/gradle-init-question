@@ -1,0 +1,20 @@
+# Ignored files
+*.bak
+*.class
+*.orig
+*.zip
+*.log
+.gradle/
+.idea
+.metadata/
+bin/
+build/
+target/
+temp/
+out/
+Version.java
+VersionBV.java
+VersionExt.java
+.settings/
+.classpath
+.project

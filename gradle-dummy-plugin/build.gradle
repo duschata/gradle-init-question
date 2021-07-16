@@ -1,0 +1,51 @@
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+}
+
+
+group 'my.plugin'
+version = '0.0.1'
+
+ext {
+    plugin_name = 'My Plugin'
+    compatibilityVersion = '1.8'
+}
+
+sourceCompatibility = compatibilityVersion
+targetCompatibility = compatibilityVersion
+
+gradlePlugin {
+    plugins {
+        register("MyPlugin") {
+            id = "my-plugin"
+            implementationClass = "my.plugin.MyPlugin"
+        }
+    }
+}
+
+model {
+    publishing {
+        publications {
+            pluginMaven {
+
+                pom {
+                    name = plugin_name
+                    description = 'My Plugin'
+                    inceptionYear = '2021'
+
+                }
+            }
+        }
+        repositories {
+            maven {
+                url = "http://sro-artifactory/artifactory/gradle-plugins-mvn-release"
+                credentials {
+                    username = artifactoryUsername
+                    password = artifactoryPassword
+                }
+            }
+        }
+    }
+}
