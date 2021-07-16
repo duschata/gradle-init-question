@@ -1,27 +1,16 @@
-//buildscript {
-//    dependencies {
-//        classpath 'my.plugin:my-plugin:0.0.1'
-//    }
-//}
-
-
 plugins {
-    // Apply the java-library plugin to add support for Java Library
     id 'java'
 }
 
 
-//apply plugin: 'my-plugin'
-
+// this is an extension created by my plugin
 //myExtension {
 //}
 
 
 dependencies {
-    // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
 }
 
-// In this section you declare where to find the dependencies of your project
 repositories {
 }

@@ -1,0 +1,12 @@
+allprojects {
+    project.buildscript {
+        dependencies {
+            classpath 'my.plugin:my-plugin:0.0.1'
+        }
+    }
+    afterEvaluate {
+        println 'applying my-plugin plugin from ~/.gradle/init.d/myplugin.gradle'
+        project.apply plugin: 'java'
+        project.apply plugin: 'my-plugin'
+    }
+}
